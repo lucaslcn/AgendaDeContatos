@@ -123,7 +123,7 @@ public class AgendaDeContatos {
                     for (int i = 0; i < contato.length && contato[i] != null; i++)
 
                         {
-                        System.out.println(contato[i].getId() + ", " + contato[i].getNome());
+                        System.out.println("ID: " + contato[i].getId() + ", Nome: " + contato[i].getNome());
                         }
                     
                     int escolha = Entrada.leiaInt("Digite o ID do contato que deseja enviar a mensagem:");
@@ -151,7 +151,7 @@ public class AgendaDeContatos {
                     
                     System.out.println("\n------LOG DE MENSAGENS ENVIADAS------\n\n");
                     
-                    for (int i = 0; i < mensagem.length; i++)
+                    for (int i = 0; i < mensagem.length && mensagem[i] != null; i++)
                     {
                         System.out.println(mensagem[i].getContato());
                         System.out.println(mensagem[i].getDataHora());
