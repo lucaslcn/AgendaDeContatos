@@ -119,14 +119,15 @@ public class AgendaDeContatos {
                 case 4:
                 {
                     for (int i = 0; i < contato.length && contato != null; i++)
-                    {
+
+                        {
                         System.out.println(contato[i].getId() + ", " + contato[i].getNome());
-                        
+                        }
                     }
                     
                     int escolha = Entrada.leiaInt("Digite o ID do contato que deseja enviar a mensagem:");
                     String msg = Entrada.leiaString("Digite a mensagem que deseja enviar ao contato:");
-                    cadastrarMensagem(Mensagem mensagem[],contato[escolha], msg, iMensagem);
+                    cadastrarMensagem(mensagem,contato[escolha],msg,iMensagem);
                     
              
                     
@@ -138,14 +139,14 @@ public class AgendaDeContatos {
                 }
                 
                 
-            }
+            
     
-    private static void cadastrarMensagem (Mensagem mensagem, Contato contato, String msg, int iMensagem)
+    public static void cadastrarMensagem (Mensagem mensagem[], Contato contato, String msg, int iMensagem)
     {
         Mensagem m = new Mensagem();
         m.setContato(contato);
         m.setMensagem(msg);
-        
+        contato.setNumeroMensagens();
         iMensagem++;
     }
         
