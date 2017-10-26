@@ -76,7 +76,7 @@ public class Contato {
         return numeroMensagens;
     }
 
-    public void setNumeroMensagens() {
+    public void addMessage() {
         this.numeroMensagens++;
     }
     

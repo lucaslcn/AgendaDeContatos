@@ -127,7 +127,7 @@ public class AgendaDeContatos {
                     
                     int escolha = Entrada.leiaInt("Digite o ID do contato que deseja enviar a mensagem:");
                     String msg = Entrada.leiaString("Digite a mensagem que deseja enviar ao contato:");
-                    cadastrarMensagem(mensagem,contato[escolha],msg,iMensagem);
+                    cadastrarMensagem(mensagem,contato[escolha-1],msg,iMensagem);
                     
              
                     
@@ -146,7 +146,7 @@ public class AgendaDeContatos {
         Mensagem m = new Mensagem();
         m.setContato(contato);
         m.setMensagem(msg);
-        contato.setNumeroMensagens();
+        contato.addMessage();
         iMensagem++;
     }
         
