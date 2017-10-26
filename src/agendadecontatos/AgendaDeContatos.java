@@ -48,6 +48,7 @@ public class AgendaDeContatos {
                                            + "\n2 - Consultar contato"
                                            + "\n3 - Listar contatos por tipo"
                                            + "\n4 - Fazer o envio de uma mensagem"
+                                           + "\n5 - Verificar logs"
                     ))
             {
                 
@@ -123,13 +124,16 @@ public class AgendaDeContatos {
                         {
                         System.out.println(contato[i].getId() + ", " + contato[i].getNome());
                         }
-                    }
                     
                     int escolha = Entrada.leiaInt("Digite o ID do contato que deseja enviar a mensagem:");
                     String msg = Entrada.leiaString("Digite a mensagem que deseja enviar ao contato:");
                     cadastrarMensagem(mensagem,contato[escolha-1],msg,iMensagem);
+                    break;
                     
-             
+                }
+                
+                case 5:
+                {
                     
                 }
                 
@@ -137,6 +141,7 @@ public class AgendaDeContatos {
                         
                     }
                 }
+    }
                 
                 
             
@@ -146,10 +151,11 @@ public class AgendaDeContatos {
         Mensagem m = new Mensagem();
         m.setContato(contato);
         m.setMensagem(msg);
+        m.setDataHora(Funcoes.getDataHoraAtual());
         contato.addMessage();
         iMensagem++;
     }
-        
+            
 
             
         }
