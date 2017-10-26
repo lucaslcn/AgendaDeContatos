@@ -48,7 +48,8 @@ public class AgendaDeContatos {
                                            + "\n2 - Consultar contato"
                                            + "\n3 - Listar contatos por tipo"
                                            + "\n4 - Fazer o envio de uma mensagem"
-                                           + "\n5 - Verificar logs"
+                                           + "\n5 - Consultar numero de mensagens para algum contato"
+                                           + "\n6 - Listar mensagens enviadas"
                     ))
             {
                 
@@ -104,7 +105,7 @@ public class AgendaDeContatos {
                 
                     for (int i = 0; i<contato.length; i++)
                     {
-                        if(contato[i].getTipo() == tipos[tipoEscolhido])
+                        if(contato[i].getTipo() == tipos[-1])
                         {
                             System.out.println(contato[i].getNome());
                             System.out.println(contato[i].getEmail());
@@ -134,9 +135,29 @@ public class AgendaDeContatos {
                 
                 case 5:
                 {
+                    for (int i = 0; i < contato.length && contato[i] != null; i++)
+
+                        {
+                        System.out.println("ID: " + contato[i].getId() + ", Nome: " + contato[i].getNome());
+                        }
                     
+                    int escolha = Entrada.leiaInt("Digite o ID do contato que deseja consultar o numero de mensagems:");
+                    
+                    System.out.println("Foram enviadas " + contato[escolha-1].getNumeroMensagens() + " mensagens ao contato");
+                    break;
                 }
                 
+                case 6:
+                    
+                    System.out.println("\n------LOG DE MENSAGENS ENVIADAS------\n\n");
+                    
+                    for (int i = 0; i < mensagem.length; i++)
+                    {
+                        System.out.println(mensagem[i].getContato());
+                        System.out.println(mensagem[i].getDataHora());
+                        System.out.println(mensagem[i].getMensagem());
+                        System.out.println("\n");
+                    }
            
                         
                     }
@@ -153,7 +174,9 @@ public class AgendaDeContatos {
         m.setMensagem(msg);
         m.setDataHora(Funcoes.getDataHoraAtual());
         contato.addMessage();
+        mensagem[iMensagem] = m;
         iMensagem++;
+        
     }
             
 

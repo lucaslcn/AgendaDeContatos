@@ -17,12 +17,6 @@ public class Mensagem {
     private Contato contato;
     private String mensagem;
     
-    public void cadastrarMensagem(Contato contato, String mensagem)
-    {
-        this.contato = contato;
-        this.mensagem = mensagem;
-        this.dataHora = Funcoes.getDataHoraAtual();
-    }
 
     public String getDataHora() {
         return dataHora;
