@@ -78,7 +78,7 @@ public class AgendaDeContatos {
                 case 2:
                 {
                     nome = Entrada.leiaString ("Digite o nome do contato desejado:");
-                    for (int i = 0; i < contato.length; i++)
+                    for (int i = 0; i < contato.length && contato[i] != null; i++)
                     {
                         if (nome.equalsIgnoreCase(contato[i].getNome()))
                         {
@@ -118,7 +118,7 @@ public class AgendaDeContatos {
                 
                 case 4:
                 {
-                    for (int i = 0; i < contato.length && contato != null; i++)
+                    for (int i = 0; i < contato.length && contato[i] != null; i++)
 
                         {
                         System.out.println(contato[i].getId() + ", " + contato[i].getNome());
