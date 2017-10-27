@@ -153,7 +153,7 @@ public class AgendaDeContatos {
                     
                     for (int i = 0; i < mensagem.length && mensagem[i] != null; i++)
                     {
-                        System.out.println(mensagem[i].getContato());
+                        System.out.println(mensagem[i].getContato().getNome());
                         System.out.println(mensagem[i].getDataHora());
                         System.out.println(mensagem[i].getMensagem());
                         System.out.println("\n");
